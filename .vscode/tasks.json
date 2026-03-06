@@ -1,0 +1,122 @@
+{
+  "version": "2.0.0",
+  "options": {
+      "statusbar": {
+        "color" : "#22C1D6"
+    }
+  },  
+  "tasks": [
+    {
+      "label": "$(console) SSH",
+      "type": "shell",
+      // "command": "sshpass -p \"${config:password}\" ssh -X -tt ${config:user}@${config:ip}",
+      "command": "sshpass -p \"${config:password}\" ssh -tt ${config:user}@${config:ip}",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },       
+    {
+      "label": "$(settings-sync-view-icon) SYNC",
+      "type": "shell",
+      "command": "sshpass -p \"${config:password}\" rsync -av --delete ~/lcec-qtvcp ${config:user}@${config:ip}:~/linuxcnc/configs/",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "$(debug) HAL SHOW",
+      "type": "shell",
+      "command": "sshpass -p \"${config:password}\" ssh -X -tt ${config:user}@${config:ip} 'halshow'",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },        
+    {
+      "label": "$(notebook-execute) RUN",
+      "options": {
+        "statusbar": {
+          "color" : "#00ff89"
+        }
+      },      
+      "type": "shell",
+      "command": "sshpass -p \"${config:password}\" rsync -av --delete ~/lcec-qtvcp ${config:user}@${config:ip}:~/linuxcnc/configs/ && sshpass -p \"${config:password}\" ssh -tt ${config:user}@${config:ip} 'export DISPLAY=:0; /home/cnc/linuxcnc/configs/lcec-qtvcp/start.sh'",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "$(notebook-execute) RUN (No Sync)",
+      "options": {
+        "statusbar": {
+          "color" : "#ffef0c"
+        }
+      },      
+      "type": "shell",
+      "command": "sshpass -p \"${config:password}\" ssh -tt ${config:user}@${config:ip} 'export DISPLAY=:0; /home/cnc/linuxcnc/configs/lcec-qtvcp/start.sh'",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },          
+    {
+      "label": "$(notebook-execute) RUN (No Display)",
+      "options": {
+        "statusbar": {
+          "color" : "#ff8900"
+        }
+      },            
+      "type": "shell",
+      "command": "sshpass -p \"${config:password}\" ssh -X -tt ${config:user}@${config:ip} '/home/cnc/linuxcnc/configs/lcec-qtvcp/start.sh'",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
