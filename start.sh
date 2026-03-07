@@ -48,7 +48,7 @@ echo " "
 # sleep 2
 
 # export DISPLAY=:0
-linuxcnc /home/cnc/linuxcnc/configs/lcec-qtvcp/cnc.ini
+linuxcnc /home/cnc/linuxcnc/configs/lcec-qtvcp/config.ini
 
 echo " "
 

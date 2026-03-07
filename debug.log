@@ -1,0 +1,3 @@
+2026-03-07 11:21:53,607 - QTvcp.QTVCP.QT_ISTAT - WARNING - Path not valid in INI File [DISPLAY] PROGRAM_PREFIX section
+2026-03-07 11:21:54,338 - QTvcp.QTVCP.WIDGETS.SCREEN_OPTIONS - WARNING - problem inserting VCP 'Vismach demo' to location: tabWidget_utilities :
+ 'VCPWindow' object has no attribute 'tabWidget_utilities'

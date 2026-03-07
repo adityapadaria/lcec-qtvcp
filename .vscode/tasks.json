@@ -9,7 +9,6 @@
     {
       "label": "$(console) SSH",
       "type": "shell",
-      // "command": "sshpass -p \"${config:password}\" ssh -X -tt ${config:user}@${config:ip}",
       "command": "sshpass -p \"${config:password}\" ssh -tt ${config:user}@${config:ip}",
       "group": {
         "kind": "build",
@@ -23,6 +22,22 @@
       },
       "problemMatcher": []
     },       
+    {
+      "label": "$(pencil) QT DESIGNER",
+      "type": "shell",
+      "command": "designer -qt=5 /home/cnc/lcec-qtvcp/ui/config.ui",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },     
     {
       "label": "$(settings-sync-view-icon) SYNC",
       "type": "shell",
@@ -118,5 +133,26 @@
       },
       "problemMatcher": []
     }
+    {
+      "label": "$(notebook-execute) RUN (PC Version)",
+      "options": {
+        "statusbar": {
+          "color" : "#00ff89"
+        }
+      },      
+      "type": "shell",
+      "command": "linuxcnc /home/cnc/lcec-qtvcp/config.ini",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },    
   ]
 }
