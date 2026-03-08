@@ -25,7 +25,7 @@
     {
       "label": "$(pencil) QT DESIGNER",
       "type": "shell",
-      "command": "designer -qt=5 /home/cnc/lcec-qtvcp/ui/config.ui",
+      "command": "designer -qt=5 /home/cnc/linuxcnc/configs/lcec-qtvcp/software/software.ui",
       "group": {
         "kind": "build",
         "isDefault": false
@@ -41,7 +41,7 @@
     {
       "label": "$(settings-sync-view-icon) SYNC",
       "type": "shell",
-      "command": "sshpass -p \"${config:password}\" rsync -av --delete ~/lcec-qtvcp ${config:user}@${config:ip}:~/linuxcnc/configs/",
+      "command": "sshpass -p \"${config:password}\" rsync -av --delete ~/linuxcnc/configs/lcec-qtvcp ${config:user}@${config:ip}:~/linuxcnc/configs/",
       "group": {
         "kind": "build",
         "isDefault": false
@@ -78,7 +78,7 @@
         }
       },      
       "type": "shell",
-      "command": "sshpass -p \"${config:password}\" rsync -av --delete ~/lcec-qtvcp ${config:user}@${config:ip}:~/linuxcnc/configs/ && sshpass -p \"${config:password}\" ssh -tt ${config:user}@${config:ip} 'export DISPLAY=:0; /home/cnc/linuxcnc/configs/lcec-qtvcp/start.sh'",
+      "command": "sshpass -p \"${config:password}\" rsync -av --delete ~/linuxcnc/configs/lcec-qtvcp ${config:user}@${config:ip}:~/linuxcnc/configs/ && sshpass -p \"${config:password}\" ssh -tt ${config:user}@${config:ip} 'export DISPLAY=:0; /home/cnc/linuxcnc/configs/lcec-qtvcp/start.sh'",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -132,7 +132,7 @@
         "panel": "shared"
       },
       "problemMatcher": []
-    }
+    },
     {
       "label": "$(notebook-execute) RUN (PC Version)",
       "options": {
@@ -141,7 +141,7 @@
         }
       },      
       "type": "shell",
-      "command": "linuxcnc /home/cnc/lcec-qtvcp/config.ini",
+      "command": "/home/cnc/linuxcnc/configs/lcec-qtvcp/start.sh",
       "group": {
         "kind": "build",
         "isDefault": true

@@ -1,0 +1,35 @@
+
+/** -----------------------------------------------------------------------  GCode Viewer **/
+
+/* style 0 -digit characters */
+/* style 1 -comments */
+/* style 2 -alphabetic characters */
+/* style 3 -assignment characters */
+/* style 4 -value characters */
+/* style 5 -axis characters */
+/* style 6 -? characters */
+/* style 7 -M and F characters */
+
+EditorBase {
+  qproperty-styleColorMarginBackground: '#cecece';
+  qproperty-styleColorMarginText: '#000000';
+  qproperty-styleFontMargin: 12pt "Sans";
+  qproperty-styleColorBackground: '#ffffff';
+  qproperty-styleColor0: '#000000';  
+  qproperty-styleColor1: '#218d3c';  
+  qproperty-styleColor2: '#e00000';  
+  qproperty-styleColor3: '#000000';  
+  qproperty-styleColor4: '#000000';  
+  qproperty-styleColor5: '#0047e0';  
+  qproperty-styleColor6: '#000000';  
+  qproperty-styleColor7: '#0047e0';  
+  qproperty-styleFont0: 12pt "Sans";
+  qproperty-styleFont1: 12pt "Sans";
+  qproperty-styleFont2: 12pt "Sans";
+  qproperty-styleFont3: 12pt "Sans";
+  qproperty-styleFont4: 12pt "Sans";
+  qproperty-styleFont5: 12pt "Sans";
+  qproperty-styleFont6: 12pt "Sans";
+  qproperty-styleFont7: 12pt "Sans";
+  qproperty-styleColorSelectionBackground: '#89aee6';  
+}

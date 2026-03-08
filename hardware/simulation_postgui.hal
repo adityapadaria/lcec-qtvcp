@@ -1,4 +1,4 @@
-net spindle-speed-limited  =>  spindle.0.speed-out-rps => spindle.0.speed-in
+# net spindle-speed-limited  =>  spindle.0.speed-out-rps => spindle.0.speed-in
 
 # the unlink pin commands are only used, because they are connected 
 # in core_sim.hal and we use this file to simulate
